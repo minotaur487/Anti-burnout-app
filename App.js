@@ -1,13 +1,9 @@
 import React from 'react'; 
 //import { NavigationContainer, createBottomTabNavigator } from 'react-navigation';
-//import track from './components/track/track';
-import Plan from './components/plan/plan';
-
-
-//const Tab = createBottomTabNavigator();
+import Home from './components/home/home';
 
 export default function App() {
   return (
-    <Plan/>
+    <Home/>
   );
 }
