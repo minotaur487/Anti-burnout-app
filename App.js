@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // If you want to add a detail screen, (ex tracker, levels) make sure to first input it here
 import Home from './components/home/home';
 import Onboarding from './components/onboarding/Onboarding';
-import DetailTester from './components/detailTester';
+import PlanDetails from './components/plan/planDetails';
 
 const AppStack = createStackNavigator();
 
@@ -23,7 +23,7 @@ export default function App() {
         <AppStack.Navigator headerMode="none">
           <AppStack.Screen name="Onboarding" component={Onboarding} />
           <AppStack.Screen name="Home" component={Home} />
-          <AppStack.Screen name="DetailTester" component={DetailTester} />
+          <AppStack.Screen name="PlanDetails" component={PlanDetails} />
         </AppStack.Navigator>
       </NavigationContainer>
     </>
