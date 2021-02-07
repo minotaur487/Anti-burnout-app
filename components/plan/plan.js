@@ -1,12 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import PlanLevel from './planLevel';
+import PlanCenter from './planCenter';
+import PlanContact from './planContact';
+
 
 export default function Plan() {
   return (
     <View style={styles.container}>
-      <Text>Plan is a page!</Text>
-      <StatusBar style="auto" />
+      <PlanCenter mission=''/>
+      <Text style={styles.headers}>Contacts: </Text>
+      <Text style={styles.subtitle}> Here's your reminder to reconnect with people you trust! </Text>
+      <PlanContact name='therapist'/>
+      <PlanContact name='friend'/>
+
+      <Text style={styles.headers}>Reminders: </Text>
+      <PlanLevel level='1' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
+      <PlanLevel level='2' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
     </View>
   );
 }
@@ -17,5 +27,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  headers: {
+    fontSize: 25,
+    paddingLeft: 25,
+    paddingTop: 15,
+    fontWeight: 'bold',
+    alignSelf:'flex-start',
+  },
+  subtitle: {
+    fontSize: 18,
+    padding: 5,
+    marginHorizontal: 20,
+    textAlign: 'center',
   },
 });
