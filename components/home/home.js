@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Track from '../track/track';
 import Plan from '../plan/plan';
 import MCentre from '../centre/MCentre';
-import {StyleSheet, SafeAreaView, Text, View, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
+import {StyleSheet, SafeAreaView, Text, View, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
+import { Divider } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   aloeText: {
@@ -32,21 +33,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   pageButtonText: {
-    fontSize: 20,
     lineHeight: 30,
-    color: "#000000",
     fontWeight:"bold",
   },
   buttonSelected: {
-    backgroundColor: 'rgba(88, 182, 131, 0.5)',
+    color: "#58B683",
+    fontSize: 25,
   },
   buttonNotSelected: {
-    backgroundColor: "#E5E5E5",
+    color: 'rgba(88, 182, 131, 0.5)',
+    fontSize: 20,
   },
 });
 
 export default function Home() {
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
   
     const toTrack = () => {
       setPage(0);
@@ -65,16 +66,17 @@ export default function Home() {
         <View style={{flexDirection:'column', padding:10}}>
           <Text style={styles.aloeText}> aloe </Text>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={toTrack} style={[styles.pageButtons, page!=0 ?  styles.buttonNotSelected : styles.buttonSelected]}>
-              <Text style={styles.pageButtonText}>track</Text>
+            <TouchableOpacity onPress={toTrack} style={styles.pageButtons}>
+              <Text style={[styles.pageButtonText, page!=0 ?  styles.buttonNotSelected : styles.buttonSelected]}>| track</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={toPlan} style={[styles.pageButtons, page!=1 ?  styles.buttonNotSelected : styles.buttonSelected]}>
-              <Text style={styles.pageButtonText}>plan</Text>
+            <TouchableOpacity onPress={toPlan} style={styles.pageButtons}>
+              <Text style={[styles.pageButtonText, page!=1 ?  styles.buttonNotSelected : styles.buttonSelected]}>| plan</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={toCentre} style={[styles.pageButtons, page!=2 ?  styles.buttonNotSelected : styles.buttonSelected]}>
-              <Text style={styles.pageButtonText}>alerts</Text>
+            <TouchableOpacity onPress={toCentre} style={styles.pageButtons}>
+              <Text style={[styles.pageButtonText, page!=2 ?  styles.buttonNotSelected : styles.buttonSelected]}>| alerts</Text>
             </TouchableOpacity>
           </View>
+          <Divider style={{backgroundColor: 'rgba(88, 182, 131, 0.5)', height: 3,}}/>
           <ScrollView>
             <SubPage page={page}/>
           </ScrollView>
