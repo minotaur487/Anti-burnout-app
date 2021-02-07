@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 
-const UserInput = () => {
+const UserInput = ({input}) => {
     return (
         <View style={styles.rectangle}>
             <TextInput placeholder='put your ideas here' style={styles.input}></TextInput>

@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     flexDirection:'row', 
     justifyContent:'space-between',
     height: 50,
+    bottom: 8,
   },
   pageButtons: {
     padding: 5,

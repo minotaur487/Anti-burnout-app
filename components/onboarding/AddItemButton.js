@@ -1,42 +1,19 @@
 import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar';
-import React, {useState, setState} from 'react';
+import React, {useState} from 'react';
 import { View, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import UserInput from './UserInput';
 
 const AddItemButton = () => {
-    
+    const [items, setItems] = useState(["",""]);
 
-    
     return (
         <View>
-            
             <Button title="Add Item" onPress={addInput}></Button>
+            {items.forEach((element) => (
+                <UserInput input={element}/>
+            ))}
         </View>
     )
 }
 
 export default AddItemButton;
-
-// export default class App extends Component
-// {
-//     constructor()
-//     {
-//         super();
-
-//         this.state = { valueArray: [], disabled: false }
-
-//         this.index = 0;
-
-//         this.animatedValue = new Animated.Value(0);
-//     }
-
-//     addMore = () =>
-//     {
-//         // Code to add new values in array and perform animation.  
-//     }
-
-//     render()
-//     {
-//         // Set design
-//     }
-// }
