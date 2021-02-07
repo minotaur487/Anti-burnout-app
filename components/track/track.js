@@ -8,9 +8,6 @@ import Icon from 'react-native-vector-icons/AntDesign';
 export default function Track() {
   return (
     <View style={styles.container}>
-    <Header>
-        <Text> aloe</Text>
-      </Header>
       <CustomCardMood text="Mood" text2="Hello! How are you feeling today?">
         </CustomCardMood>
       <CustomCardSleep text="Sleep" text2="How many hours of shuteye did you get?">
@@ -22,7 +19,7 @@ export default function Track() {
 const CustomCardMood = (props) =>
 {
   return(
-    <Card containerStyle={{padding: 20, height: 200, borderRadius:10, flexDirection: 'column'}}>
+    <Card containerStyle={styles.cardContainer}>
         <Card.Title>{props.text}</Card.Title>
         <View style={styles.ButtonRow}>
               <MoodButtons image={require('./1.png')}>
@@ -66,7 +63,7 @@ const CustomCardSleep = (props) =>
       setHour(hours - 1);
   }
   return(
-    <Card containerStyle={{padding: 20, height: 200, borderRadius:10, flexDirection: 'column'}}>
+    <Card containerStyle={styles.cardContainer}>
         <Card.Title>{props.text}</Card.Title>
         <View style={styles.SleepRow}>
             {/* <TouchableOpacity style={styles.sleepButton} onPress={decrementHours}>
@@ -85,11 +82,12 @@ const CustomCardSleep = (props) =>
 }
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    padding: 20, height: 200, borderRadius:10, flexDirection: 'column', backgroundColor: '#3284BF'
+  },
   container: {
     flex: 1,
-    // backgroundColor: '#45a156',
     flexDirection: 'column',
-
   },
   ButtonRow: {
     flexDirection: 'row',
