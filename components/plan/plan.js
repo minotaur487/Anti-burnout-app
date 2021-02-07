@@ -1,32 +1,39 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
 import PlanLevel from './planLevel';
 import PlanCenter from './planCenter';
 import PlanContact from './planContact';
+import { useNavigation } from '@react-navigation/native';
 
 
-export default function Plan() {
+export default function Plan(){
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-      <PlanCenter mission=''/>
-      <Text style={styles.headers}>Contacts: </Text>
-      <Text style={styles.subtitle}> Here's your reminder to reconnect with people you trust! </Text>
-      <PlanContact name='therapist'/>
-      <PlanContact name='friend'/>
+    <ScrollView>
+      <View style={styles.container}>
+        <Button title="Detail!"
+          onPress={()=>navigation.navigate('DetailTester')}
+        />
+        <PlanCenter mission=''/>
+        <Text style={styles.headers}>Contacts: </Text>
+        <Text style={styles.subtitle}> Here's your reminder to reconnect with people you trust! </Text>
+        <PlanContact name='therapist'/>
+        <PlanContact name='friend'/>
 
-      <Text style={styles.headers}>Reminders: </Text>
-      <PlanLevel level='1' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
-      <PlanLevel level='2' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
-    </View>
+        <Text style={styles.headers}>Reminders: </Text>
+        <PlanLevel level='1' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
+        <PlanLevel level='2' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingBottom: 20,
   },
   headers: {
     fontSize: 25,

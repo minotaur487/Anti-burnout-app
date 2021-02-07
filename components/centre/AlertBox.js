@@ -20,16 +20,16 @@ const AlertBox = props => {
             <Text style={styles.content}>{props.content}</Text>
             <Button title="Click for Plan" onPress={setOverlay}/>
             </View>
-            <Overlay isVisible={visible} onBackdropPress={setOverlay} style={styles.container}>
+            <Overlay isVisible={visible} onBackdropPress={setOverlay}>
                 <Text>Your Plan</Text>
                 <View style={styles.grectangle}>
-                    <Text style={styles.content}>Here's some advice</Text>
+                    <Text style={styles.content}>You're starting to feel a little bit of stress. Maybe some headaches...?</Text>
                 </View>
                 <View style={styles.grectangle}>
-                    <Text style={styles.content}>Here's some more advice</Text>
+                    <Text style={styles.content}>Here's what you planned for this situation:</Text>
                 </View>
                 <View style={styles.grectangle}>
-                    <Text style={styles.content}>Here's a relevant articlee</Text>
+                    <Text style={styles.content}>Here's a relevant article</Text>
                 </View>
             </Overlay>
             {/* <StatusBar></StatusBar> */}
@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginLeft: 12,
         marginBottom: 12,
-        marginRight: 12
+        marginRight: 12,
+        padding: 10
     },
     rectangle: {
         marginTop: 20,
@@ -99,5 +100,11 @@ const styles = StyleSheet.create({
         //height: 120,
         backgroundColor: '#7EC2A2',
         borderRadius: 20
-    }
+    },
+    // overlay: {
+    //     ...StyleSheet.absoluteFillObject,
+    //     backgroundColor: '#00000000',
+    //     justifyContent: 'center',
+    //     alignItems: 'center'
+    // }
 })

@@ -3,10 +3,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AlertBox from './AlertBox';
 import PastAlert from './PastAlert';
+import AddItemButton from '../onboarding/AddItemButton'
 
 export default function MCentre() {
   return (
     <View style={styles.container}>
+      <AddItemButton></AddItemButton>  
       <Text style={styles.header}>Message Centre</Text>
       <AlertBox alert="Alert Level 1" date="feb 6" content="This is an alert"></AlertBox>  
       <Text style={styles.smallheader}>Past Messages</Text>
