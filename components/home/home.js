@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Track from '../track/track';
 import Plan from '../plan/plan';
 import MCentre from '../centre/MCentre';
-import {StyleSheet, SafeAreaView, Button, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import {StyleSheet, SafeAreaView, Button, Text, View, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
 
 const styles = StyleSheet.create({
   aloeText: {
@@ -72,13 +72,14 @@ export default function Home() {
               <Text style={styles.pageButtonText}>plan</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={toCentre} style={[styles.pageButtons, page!=2 ?  styles.buttonNotSelected : styles.buttonSelected]}>
-              <Text style={styles.pageButtonText}>centre</Text>
+              <Text style={styles.pageButtonText}>alerts</Text>
             </TouchableOpacity>
           </View>
           <ScrollView>
             <SubPage page={page}/>
           </ScrollView>
         </View>
+        <StatusBar style="auto" />
       </SafeAreaView>
     );
   }
