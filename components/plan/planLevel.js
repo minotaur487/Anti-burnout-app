@@ -1,11 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function PlanLevel({level, plan}) {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onStartShouldSetResponder={()=>navigation.navigate('PlanDetails')}>
       <Text style={styles.header}>LEVEL {level}</Text>
       <Text style={styles.description}> {plan} </Text>
     </View>
