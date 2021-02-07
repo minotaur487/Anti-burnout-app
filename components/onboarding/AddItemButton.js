@@ -4,16 +4,26 @@ import { View, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import UserInput from './UserInput';
 
 const AddItemButton = () => {
-    const [items, setItems] = useState(["",""]);
+    const [items, setItems] = useState([]);
+
+    const addInput = () => {
+        setItems([...items, ""]);
+    }
 
     return (
         <View>
-            <Button title="Add Item" onPress={addInput}></Button>
-            {items.forEach((element) => (
-                <UserInput input={element}/>
+            <Button title="Add Item" onPress={addInput} ></Button>
+            {items.map((element) => (
+                <UserInput input={element} style={styles.input}/>
             ))}
         </View>
     )
 }
 
 export default AddItemButton;
+
+const styles = StyleSheet.create({
+    input: {
+        marginBottom: 30
+    }
+})
