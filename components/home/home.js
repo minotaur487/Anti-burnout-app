@@ -2,6 +2,7 @@ import React, {useState } from 'react';
 import PropTypes from 'prop-types';
 import Track from '../track/track';
 import Plan from '../plan/plan';
+import MCentre from '../centre/MCentre';
 import {StyleSheet, SafeAreaView, Button, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -92,7 +93,7 @@ export default function Home() {
         return <Plan/>
         break;
       case 2:
-        return <Text>This will be centre</Text>
+        return <MCentre/>
         break;
       default:
         return <Text> Something funky going on</Text>
