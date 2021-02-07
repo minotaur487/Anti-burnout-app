@@ -15,10 +15,11 @@ const styles = StyleSheet.create({
     rectangle: {
         backgroundColor: 'rgba(88, 182, 131, 0.5)',
         width: 350,
-        borderRadius: 20
+        borderRadius: 20,
+        marginBottom: 30
     },
     input: {
         fontSize: 20,
-        padding: 20
+        padding: 20,
     }
 })
