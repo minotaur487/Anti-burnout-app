@@ -1,28 +1,42 @@
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { SafeAreaView } from 'react-native';
+import { Card } from 'react-native-elements';
 
 export default function SleepSummary() {
     return (
-      <View>
-        <View style='data'>
+      <SafeAreaView>
+      <View style={styles.header}>
+        <Card containerStyle={styles.aloeCard}>
+          <Text style={styles.aloeText}> aloe </Text>
+        </Card>
+        <TouchableOpacity>
+          <Text style={styles.button}>
+            back
+          </Text>
+        </TouchableOpacity>
+        </View>
+      <View style={styles.scaffold}>
+        <View style={styles.data}>
           <Text>
             Sleep
           </Text>
         </View>
-        <View style='row'>
-          <Button style='button'>
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.button}>
             <Text>Week</Text>
-          </Button>
-          <Button style='button'>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
             <Text>Month</Text>
-          </Button>
-          <Button style='button'>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
             <Text>Year</Text>
-          </Button>
+          </TouchableOpacity>
         </View>
-        <View style='messages'>
-
+        <View style={styles.messages}>
         </View>
       </View>
+      </SafeAreaView>
     );
   }
 
@@ -32,13 +46,38 @@ export default function SleepSummary() {
 
   const styles = StyleSheet.create(
   {
+    aloeCard:
+    {
+      lineHeight: 40,
+      color: "#58B683",
+      backgroundColor: "#58B683",
+      padding:10,
+      width: 120,
+      top: "auto",
+      borderRadius:100,
+      bottom: 10,
+      alignItems: 'flex-start',
+    },
+    aloeText: {
+      fontSize: 30,
+      color: "#000000",
+      fontWeight:"bold",
+    },
+    header: {
+      flexDirection: 'row',
+      padding: 20,
+      alignItems: 'flex-start',
+      justifyContent: 'space-between',
+    },
     scaffold: {
-      height: 200,
-      width: 150,
+      flexDirection: 'column',
+      padding: 10,
+      alignItems: 'center',
     },
     data: {
       flex: 60,
-      color: '#a6a6a6',
+      width: '80%',
+      backgroundColor: '#a6a6a6',
     },
     messages: {
       flex: 10,
@@ -48,9 +87,11 @@ export default function SleepSummary() {
     row: {
       flex: 30,
       color: '#6b6b6b',
+      flexDirection: 'row',
     },
     button: {
       alignItems: 'center',
       justifyContent: 'center',
+      padding: 20,
     }
   });
