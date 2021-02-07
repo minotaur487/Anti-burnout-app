@@ -1,13 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import PlanLevel from './planLevel';
 import PlanCenter from './planCenter';
 import PlanContact from './planContact';
+import { useNavigation } from '@react-navigation/native';
 
 
-export default function Plan() {
+export default function Plan(){
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
+      <Button title="Detail!"
+        onPress={()=>navigation.navigate('DetailTester')}
+      />
       <PlanCenter mission=''/>
       <Text style={styles.headers}>Contacts: </Text>
       <Text style={styles.subtitle}> Here's your reminder to reconnect with people you trust! </Text>
@@ -27,6 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom: 20,
   },
   headers: {
     fontSize: 25,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Track from '../track/track';
 import Plan from '../plan/plan';
 import MCentre from '../centre/MCentre';
-import {StyleSheet, SafeAreaView, Button, Text, View, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
+import {StyleSheet, SafeAreaView, Text, View, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
 
 const styles = StyleSheet.create({
   aloeText: {
