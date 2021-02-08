@@ -7,7 +7,7 @@ import PlanContact from './planContact';
 
 export default function Plan(){
   return (
-    <ScrollView>
+    <>
       <View style={styles.container}>
         <PlanCenter mission=''/>
         <Text style={styles.headers}>Contacts: </Text>
@@ -18,7 +18,7 @@ export default function Plan(){
         <PlanLevel level='1' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
         <PlanLevel level='2' plan = 'You’re starting to feel a little bit of stress, maybe some oncoming headaches...? More scenarios here'/>
       </View>
-    </ScrollView>
+    </>
   );
 }
 
