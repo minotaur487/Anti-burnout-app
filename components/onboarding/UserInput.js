@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 
 const UserInput = ({input}) => {
+    const [m, setM] = useState(input)
+
     return (
         <View style={styles.rectangle}>
-            <TextInput placeholder='put your ideas here' style={styles.input} value={input}></TextInput>
+            <TextInput placeholder='put your ideas here' style={styles.input} onChange={text => setM(text)} value={m}></TextInput>
         </View>
     )
 }
