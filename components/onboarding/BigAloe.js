@@ -1,9 +1,11 @@
 import React from 'react';
-import { Text,  StyleSheet } from 'react-native';
+import { Text,  StyleSheet, View } from 'react-native';
 
 export default function BigAloe() {
     return(
-        <Text style={styles.aloeText}> aloe </Text>
+        <View style={styles.aloeContainer}>
+            <Text style={styles.aloeText}> aloe </Text>
+        </View>
     );
 }
 
@@ -14,7 +16,8 @@ const styles = StyleSheet.create({
         color: "#000000",
         fontWeight:"bold",
         textAlignVertical: 'center',
-
+    },
+    aloeContainer: {
         padding: 20,
         width: 250,
         borderRadius: 50,
