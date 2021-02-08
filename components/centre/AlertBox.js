@@ -40,27 +40,6 @@ const AlertBox = props => {
 export default AlertBox;
 
 
-
-
-// const planOverlay = () => {
-//     //setOverlay();
-
-    
-//     return (
-//         <Overlay isVisible={visible} onBackdropPress={setOverlay}>
-//             <View style={styles.rectangle}>
-//                 <Text style={styles.content}>Here's some advice</Text>
-//             </View>
-//             <View style={styles.rectangle}>
-//                 <Text style={styles.content}>Here's some more advice</Text>
-//             </View>
-//             <View style={styles.rectangle}>
-//                 <Text style={styles.content}>Here's a relevant articlee</Text>
-//             </View>
-//         </Overlay>
-//     )
-// }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -100,11 +79,5 @@ const styles = StyleSheet.create({
         //height: 120,
         backgroundColor: '#7EC2A2',
         borderRadius: 20
-    },
-    // overlay: {
-    //     ...StyleSheet.absoluteFillObject,
-    //     backgroundColor: '#00000000',
-    //     justifyContent: 'center',
-    //     alignItems: 'center'
-    // }
+    }
 })
