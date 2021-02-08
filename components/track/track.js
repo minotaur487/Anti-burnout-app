@@ -46,8 +46,10 @@ export default function Track() {
 
 const CustomCardMood = (props) =>
 {
+  const navigation = useNavigation();
+
   return(
-    <Card containerStyle={styles.cardContainer}>
+    <Card containerStyle={styles.cardContainer} onStartShouldSetResponder={()=>navigation.navigate('MoodSummary')}>
         <Card.Title style={{fontSize: 20 }}>{props.text}</Card.Title>
         <View style={styles.ButtonRow}>
               <MoodButtons image={require('./1.png')}>
