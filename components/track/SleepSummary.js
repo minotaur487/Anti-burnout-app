@@ -1,47 +1,100 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
+import React, {useState } from 'react'; 
 import { SafeAreaView } from 'react-native';
 import { Card } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
-import Header from '../Header';
 
 
 export default function SleepSummary() {
-  const navigation = useNavigation();
+    const [but, buttonToggle] = useState(1);
+    const navigation = useNavigation();
+
+    const toWeek = () => {
+      buttonToggle(0);
+    }
+  
+    const toMonth = () => {
+      buttonToggle(1);
+    }
+  
+    const toYear = () => {
+      buttonToggle(2)
+    }
 
     return (
-      <SafeAreaView style={{flexDirection: 'column', flex: 1}}>
-          <Header buttonLabel="back" onPress={() => {navigation.goBack()}}/>
+      <SafeAreaView style={{flexDirection: 'column', flex: 1, backgroundColor: '#ffffff'}}>
+        <View style={styles.header}>
+          <Card containerStyle={styles.aloeCard}>
+            <Text style={styles.aloeText}> aloe </Text>
+          </Card>
+          <TouchableOpacity onPress={()=>navigation.goBack()}>
+            <Text style={styles.BackButton}>
+              back
+            </Text>
+          </TouchableOpacity>
+          </View>
+
         <View style={styles.scaffold}>
           <View style={styles.data}>
-            <Text styles={styles.SleepText}>
+            <Text style={{fontSize: 30}}>
               Sleep
             </Text>
+            <Image style={styles.graph} resizeMode='contain' source={but!=0 ?   require('./g2.png'):require('./6.png')}/>
           </View>
           <View style={styles.row}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.text}>Week</Text>
+            <TouchableOpacity onPress={toWeek} style={[styles.button, but!=0 ?  styles.button : styles.buttonSelected]}>
+              <Text style={[styles.text, but!=0 ?  styles.buttonNotSelected : styles.buttonSelected]}>Week</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.text}>Month</Text>
+            <TouchableOpacity onPress={toMonth} style={[styles.button, but!=1 ?  styles.button : styles.buttonSelected]}>
+              <Text style={[styles.text, but!=1 ?  styles.buttonNotSelected : styles.buttonSelected]}>Month</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.text}>Year</Text>
+            <TouchableOpacity onPress={toYear} style={[styles.button, but!=2 ?  styles.button : styles.buttonSelected]}>
+              <Text style={[styles.text, but!=2 ?  styles.buttonNotSelected : styles.buttonSelected]}>Year</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.messages}>
+            <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+              Summary
+            </Text>
+            <Text style={{fontSize: 15, padding: 30}}>
+                 ~ Start using the app first
+            </Text>
           </View>
         </View>
       </SafeAreaView>
     );
   }
 
-  const displayWeek = () => {}
-  const displayMonth = () => {}
-  const displayYear = () => {}
+  function buttonToggle({but}) {
+    switch(but) {
+      case 0:
+        return
+        break;
+      case 1:
+        return
+        break;
+      case 2:
+        return
+        break;
+      default:
+        return <Text> Something funky going on</Text>
+        break;
+    }
+  }
+  
+  buttonToggle.propTypes = {
+    but: PropTypes.number.isRequired,
+  }
+
 
   const styles = StyleSheet.create(
   {
+    graph: {
+      padding:50,
+      width: 400,
+      height: 200
+    },
     text: {
       color: '#000000',
       fontSize: 12,
@@ -76,15 +129,19 @@ export default function SleepSummary() {
       alignItems: 'center',
     },
     data: {
-      flex: 60,
+      flex: 50,
+      padding: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
       width: '90%',
       backgroundColor: '#E5E5E5',
     },
     messages: {
       flex: 35,
       width: '90%',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
+      padding: 10,
+      // alignItems: 'flex-start',
       backgroundColor: '#C4C4C4'
     },
     row: {
@@ -98,7 +155,11 @@ export default function SleepSummary() {
     },
     button: {
       alignItems: 'center',
-      padding: 20,
+      justifyContent: 'center',
+      height: 40,
+      width: 75,
+      borderRadius: 10,
+      // padding: 20,
       backgroundColor: '#E5E5E5',
     },
     BackButton: {
@@ -107,7 +168,17 @@ export default function SleepSummary() {
       padding: 20,
     },
     SleepText: {
-      textAlign: 'center',
       fontSize: 30,
+    },
+    buttonSelected: {
+      backgroundColor: "#58B683",
+      color: '#000000',
+      fontSize: 25,
+      borderRadius: 10,
+    },
+    buttonNotSelected: {
+      color: '#000000',
+      fontSize: 20,
+      borderRadius: 10,
     },
   });
