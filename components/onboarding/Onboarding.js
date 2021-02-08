@@ -11,6 +11,7 @@ import Header from '../Header';
 // Page1 and Page 2 are tester pages that can be deleted whenever
 import IntroPage1 from './IntroPage1';
 import IntroPage2 from './IntroPage2';
+import StressIndicators from './StressIndicators';
 
 import FirstPage from './FirstPage';
 import LastPage from './LastPage';
@@ -41,7 +42,11 @@ export default function Onboarding() {
           <Header buttonLabel="next" onPress={() => {handlePageChange(3);}}/>
           <IntroPage2/>
         </View>
-        <View key ="4" style={styles.container}>
+        <View key="4" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(4)}}/>
+          <StressIndicators/>
+        </View>
+        <View key ="5" style={styles.container}>
           <LastPage onPress={() => {navigation.navigate('Home');}}/>
         </View>
       <StatusBar style="auto" />
