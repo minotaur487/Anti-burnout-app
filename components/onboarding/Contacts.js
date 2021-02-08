@@ -9,7 +9,6 @@ export default function Page2() {
           <KeyboardAvoidingView behavior="height" style={styles.container}>
           <View style={styles.container}>  
           <View style={styles.rectangle}>
-            <Text style={styles.header}>Level 3</Text>
             <Text style={styles.big}>
               Humans are social beings. It's easy to isolate yourself when experiencing burnout, but the best thing to do is to 
               talk with people. Who would you like to remind yourself to connect with?

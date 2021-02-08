@@ -1,6 +1,5 @@
-import {StatusBar} from 'expo-status-bar';
+
 import React, { useState } from 'react';
-//import React from 'react';
 import { View, StyleSheet, Text, Button } from 'react-native';
 import { Overlay } from 'react-native-elements';
 
@@ -21,18 +20,17 @@ const AlertBox = props => {
             <Button title="Click for Plan" onPress={setOverlay}/>
             </View>
             <Overlay isVisible={visible} onBackdropPress={setOverlay}>
-                <Text>Your Plan</Text>
+                <Text style={styles.header}>Your Plan</Text>
                 <View style={styles.grectangle}>
-                    <Text style={styles.content}>You're starting to feel a little bit of stress. Maybe some headaches...?</Text>
+                    <Text style={styles.content}>You're starting to feel a little bit of stress.</Text>
                 </View>
                 <View style={styles.grectangle}>
                     <Text style={styles.content}>Here's what you planned for this situation:</Text>
-                </View>
-                <View style={styles.grectangle}>
-                    <Text style={styles.content}>Here's a relevant article</Text>
+                    <Text style={styles.list}>Go for a walk</Text>
+                    <Text style={styles.list}>Grab a coffee</Text>
+                    <Text style={styles.list}>Take a nap</Text>
                 </View>
             </Overlay>
-            {/* <StatusBar></StatusBar> */}
         </View>
     )
 }
@@ -79,5 +77,9 @@ const styles = StyleSheet.create({
         //height: 120,
         backgroundColor: '#7EC2A2',
         borderRadius: 20
+    },
+    list: {
+        fontSize: 18,
+        margin: 5
     }
 })
