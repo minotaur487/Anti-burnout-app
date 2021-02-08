@@ -11,7 +11,16 @@ import Header from '../Header';
 // Page1 and Page 2 are tester pages that can be deleted whenever
 import IntroPage1 from './IntroPage1';
 import IntroPage2 from './IntroPage2';
+
 import StressIndicators from './StressIndicators';
+import HowMuchSleep from './HowMuchSleep';
+import Mood from './Mood';
+
+import Level1 from './Level1';
+import Level2 from './Level2';
+import Level3 from './Level3';
+
+import Contacts from './Contacts';
 
 import FirstPage from './FirstPage';
 import LastPage from './LastPage';
@@ -46,7 +55,31 @@ export default function Onboarding() {
           <Header buttonLabel="next" onPress={() => {handlePageChange(4)}}/>
           <StressIndicators/>
         </View>
-        <View key ="5" style={styles.container}>
+        <View key="5" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(5)}}/>
+          <HowMuchSleep/>
+        </View>
+        <View key="6" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(6)}}/>
+          <Mood/>
+        </View>
+        <View key="7" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(7)}}/>
+          <Level1/>
+        </View>
+        <View key="8" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(8)}}/>
+          <Level2/>
+        </View>
+        <View key="9" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(9)}}/>
+          <Level3/>
+        </View>
+        <View key="10" style={styles.container}>
+          <Header buttonLabel="next" onPress={() => {handlePageChange(10)}}/>
+          <Contacts/>
+        </View>
+        <View key="11" style={styles.container}>
           <LastPage onPress={() => {navigation.navigate('Home');}}/>
         </View>
       <StatusBar style="auto" />
