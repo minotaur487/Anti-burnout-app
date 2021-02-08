@@ -16,7 +16,7 @@ export default function Page1() {
             </Text>
           </View>
 
-          <Text style={styles.small}>Phone lines/resources</Text>
+          {/* <Text style={styles.small}>Phone lines/resources</Text> */}
         </View>
   );
 }
