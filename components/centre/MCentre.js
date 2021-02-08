@@ -7,10 +7,9 @@ import AddItemButton from '../onboarding/AddItemButton'
 
 export default function MCentre() {
   return (
-    <View style={styles.container}>
-      <AddItemButton></AddItemButton>  
+    <View style={styles.container}> 
       <Text style={styles.header}>Message Centre</Text>
-      <AlertBox alert="Alert Level 1" date="feb 6" content="This is an alert"></AlertBox>  
+      <AlertBox alert="Alert Level 1" date="feb 7, 2020" content="You might want to take a break and grab a snack. Checkout some activities that might help you"></AlertBox>  
       <Text style={styles.smallheader}>Past Messages</Text>
       <PastAlert alert="Alert Level 2" date="feb 5"></PastAlert>
       <StatusBar style="auto" />
