@@ -4,9 +4,11 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Card, Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { ModalDatePicker } from "react-native-material-date-picker";
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Track() {
+
   const getCurrentDate=()=>{
 
     var date = new Date().getDate();
@@ -46,7 +48,7 @@ const CustomCardMood = (props) =>
 {
   return(
     <Card containerStyle={styles.cardContainer}>
-        <Card.Title style={{fontSize: 20, fontFamily: 'Roboto'}}>{props.text}</Card.Title>
+        <Card.Title style={{fontSize: 20 }}>{props.text}</Card.Title>
         <View style={styles.ButtonRow}>
               <MoodButtons image={require('./1.png')}>
               </MoodButtons>
@@ -78,6 +80,8 @@ const MoodButtons = (props) =>
 
 const CustomCardSleep = (props) =>
 {
+  const navigation = useNavigation();
+
   const [hours, setHour] = useState(0);
   const incrementHours = () => {
   if (hours < 24)
@@ -89,8 +93,8 @@ const CustomCardSleep = (props) =>
       setHour(hours - 1);
   }
   return(
-    <Card containerStyle={styles.cardContainer}>
-        <Card.Title style={{fontSize: 20, fontFamily: 'Roboto'}}>{props.text}</Card.Title>
+    <Card containerStyle={styles.cardContainer} onStartShouldSetResponder={()=>navigation.navigate('SleepSummary')}>
+        <Card.Title style={{fontSize: 20 }}>{props.text}</Card.Title>
         <View style={styles.SleepRow}>
             {/* <TouchableOpacity style={styles.sleepButton} onPress={decrementHours}>
             </TouchableOpacity> */}
@@ -132,7 +136,6 @@ const styles = StyleSheet.create({
     borderRadius: 200,
   },
   SleepText: {
-    fontFamily: 'Roboto',
     textAlign: 'center',
     fontSize: 30,
   },
@@ -157,7 +160,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#a83258",
   },
   text: {
-    fontFamily: 'Roboto',
     fontSize: 16,
     alignItems: "center",
     padding: 30,
@@ -170,7 +172,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headerText: {
-    fontFamily: 'Roboto',
     fontSize: 30,
   }
 });

@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './components/home/home';
 import Onboarding from './components/onboarding/Onboarding';
 import PlanDetails from './components/plan/planDetails';
+import SleepSummary from './components/track/SleepSummary';
 
 const AppStack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
           <AppStack.Screen name="Onboarding" component={Onboarding} />
           <AppStack.Screen name="Home" component={Home} />
           <AppStack.Screen name="PlanDetails" component={PlanDetails} />
+          <AppStack.Screen name="SleepSummary" component={SleepSummary} />
         </AppStack.Navigator>
       </NavigationContainer>
     </>

@@ -12,18 +12,20 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     color: "#000000",
     fontWeight:"bold",
-
-    backgroundColor: "#58B683",
-    padding:5,
-    width: 120,
-    top: "auto",
-    bottom: 10,
   },
+  aloeContainer: {
+    alignItems: 'flex-start',
+    padding: 5,
+    width: 120,
+    borderRadius: 50,
+    backgroundColor: "#58B683",
+},
   buttonContainer: {
     flexDirection:'row', 
     justifyContent:'space-between',
     height: 50,
-    bottom: 8,
+    marginTop: 10,
+    marginBottom: 5,
   },
   pageButtons: {
     padding: 5,
@@ -65,7 +67,9 @@ export default function Home() {
     return (
       <SafeAreaView>
         <View style={{flexDirection:'column', padding:10}}>
-          <Text style={styles.aloeText}> aloe </Text>
+          <View style={styles.aloeContainer}>
+            <Text style={styles.aloeText}> aloe </Text>
+          </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity onPress={toTrack} style={styles.pageButtons}>
               <Text style={[styles.pageButtonText, page!=0 ?  styles.buttonNotSelected : styles.buttonSelected]}>| track</Text>

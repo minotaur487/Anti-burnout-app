@@ -2,21 +2,16 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Card } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
+import Header from '../Header';
+
 
 export default function SleepSummary() {
+  const navigation = useNavigation();
+
     return (
       <SafeAreaView style={{flexDirection: 'column', flex: 1}}>
-        <View style={styles.header}>
-          <Card containerStyle={styles.aloeCard}>
-            <Text style={styles.aloeText}> aloe </Text>
-          </Card>
-          <TouchableOpacity>
-            <Text style={styles.BackButton}>
-              back
-            </Text>
-          </TouchableOpacity>
-          </View>
-
+          <Header buttonLabel="back" onPress={() => {navigation.goBack()}}/>
         <View style={styles.scaffold}>
           <View style={styles.data}>
             <Text styles={styles.SleepText}>
@@ -50,7 +45,6 @@ export default function SleepSummary() {
     text: {
       color: '#000000',
       fontSize: 12,
-      fontFamily: 'Roboto',
     },
     aloeCard:
     {
@@ -113,7 +107,6 @@ export default function SleepSummary() {
       padding: 20,
     },
     SleepText: {
-      fontFamily: 'Roboto',
       textAlign: 'center',
       fontSize: 30,
     },

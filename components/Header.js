@@ -7,7 +7,9 @@ import { Text, TouchableOpacity, StyleSheet, View } from 'react-native';
 export default function Header({onPress, buttonLabel}) {
     return(
         <View style={styles.container}>
-            <Text style={styles.aloeText}> aloe </Text>
+            <View style={styles.aloeContainer}>
+                <Text style={styles.aloeText}> aloe </Text>
+            </View>
             <TouchableOpacity
                 style={styles.button}
                 onPress={onPress}
@@ -29,13 +31,14 @@ const styles = StyleSheet.create({
         height: 'auto',
         alignItems: 'center',
         textAlignVertical: 'center',
+        paddingBottom: 10,
     },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
-        fontSize: 30,
+        fontSize: 25,
         color: 'black',
         alignItems: 'center',
     },
@@ -45,7 +48,9 @@ const styles = StyleSheet.create({
         color: "#000000",
         fontWeight:"bold",
         textAlignVertical: 'center',
-
+    },
+    aloeContainer: {
+        alignItems: 'flex-start',
         padding: 5,
         width: 120,
         borderRadius: 50,
